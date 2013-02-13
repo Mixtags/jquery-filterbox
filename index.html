@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<!--link href="style.css" rel="stylesheet" type="text/css" /-->
+<style>
+h3 {
+	margin:0
+	float:left;
+}
+hr {
+	margin:2em 0;
+}
+
+#container {
+	width: 50%;
+	float:left;
+}
+.box {
+	float:left;
+	width:100px;
+	height:50px;
+	margin:.5em;
+	padding:.5em;
+	border:2px solid #800;
+	border-radius:.5em;
+	background:#f80;
+}
+.box .title {
+	margin:0;
+}
+.box.finderbox-hide {
+	/* display:none; */
+	opacity:0.3; 
+}
+.counter {
+	margin:.5em;
+	display:inline-block;
+	width:1em;
+}
+.findbox {
+	background:url('search-icon.png') no-repeat #eee 0 0;
+	border:2px solid #ccc;
+	font-size:.85em;
+	line-height:.85em;
+	padding:.25em .25em .25em 1.5em;
+	border-radius:.25em;
+}
+
+#copy {
+	position:fixed;
+	top:-.85em;
+	right:20%;
+	color:#00c;
+	background:#fff;
+	border-radius:.5em;
+	box-shadow: 0 0 6px #888;	
+	padding:1em .5em .25em .5em;
+	z-index:4000;
+	font-size:small;
+	filter: alpha(opacity=70);
+	-khtml-opacity: .7;
+	-moz-opacity: .7;
+	opacity: .7;		
+}
+</style>
+</head>
+
+<body>
+<h3>jQuery FinderBox Plugin 1.0.0 </h3>
+
+<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=stefanocudini&repo=jquery-finderbox&type=fork&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+
+<hr />
+
+<div id="container">
+
+	<em class="counter">&nbsp;</em>
+	<input class="findbox" type="text" size="10" vaue="" />
+	<div class="boxlist">
+		<div class="box" id="yellow">
+			<h4 class="title">yellow</h4>
+			<p>Content of box</p>
+		</div>
+		<div class="box" id="red">
+			<h4 class="title">red</h4>
+			<p>Content of box</p>
+		</div>
+		<div class="box" id="blue">
+			<h4 class="title">blue</h4>
+			<p>Content of box</p>
+		</div>				
+		<div class="box" id="green">
+			<h4 class="title">green</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="orange">
+			<h4 class="title">orange</h4>
+			<p>Content of box</p>
+		</div>		
+		<div class="box" id="gray">
+			<h4 class="title">gray</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="brown">
+			<h4 class="title">brown</h4>
+			<p>Content of box</p>
+		</div>						
+		<div class="box" id="black">
+			<h4 class="title">black</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="white">
+			<h4 class="title">white</h4>
+			<p>Content of box</p>
+		</div>
+	</div>
+</div>
+
+<div id="copy">by <a target="_blank" href="mailto:stefano.cudini@gmail.com">Stefano Cudini</a></div>
+
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="jquery-finderbox.js"></script>
+<script>
+$(function() {
+
+	$('.findbox').finderbox({
+			container: '.boxlist',
+           	child: '.box',
+           	childKey: '.title'
+		});	
+});
+</script> 
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22278729-3']);
+  _gaq.push(['_setDomainName', 'easyblog.it']);  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
