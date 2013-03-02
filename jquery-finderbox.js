@@ -2,7 +2,7 @@
  * jQuery FinderBox Plugin 1.0.0
  * https://github.com/stefanocudini/jquery-finderbox
  *
- * Copyright 2012, Stefano Cudini - stefano.cudini@gmail.com
+ * Copyright 2013, Stefano Cudini - stefano.cudini@gmail.com
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  */
@@ -12,14 +12,14 @@
         finderbox: function(options) {	//plugin name
  
             var defaults = {
-            	container: $(this).next(),	//element/selector within which to seek
-            	child: '.finderbox-box',	//element searched
-            	//childExclude: '.finderbox-exc',	//TODO ever excluded elements
-            	childKey: '.finderbox-key',	//element for key search into element searched
-            	initial: true,	//search initial text or inside text
-                searchText: 'Search...',	//text into search box
-                hideClass: 'finderbox-hide',	//class applied to non matched elements
-                timeReset: 400	//resetting time after finderbox input blur
+            	container: $(this).next(),			//element/selector within which to seek
+            	child: '.finderbox-box',			//element searched
+            	//TODO childExclude: '.finderbox-exc',	//ever excluded elements
+            	childKey: '.finderbox-key',			//element for key search into element searched
+            	initial: true,						//search initial text or inside text
+                searchText: 'Search...',			//text into search box
+                hideClass: 'finderbox-hide',		//class applied to non matched elements
+                timeReset: 400						//resetting time after finderbox input blur
             };
             var options = $.extend(defaults, options);
          
@@ -56,12 +56,12 @@
 					$(this).prev('em').text( targetFind$.children(options.child).not('.'+options.hideClass).length );
 				})
 				.on('blur', function() {
-					
+					var that = this;
 					tf = setTimeout(function() {
 						
 						targetFind$.children(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						
-						$(this).prev('em').text( targetFind$.children(options.child).length );
+						$(that).prev('em').text( targetFind$.children(options.child).length );
 						
 					}, options.timeReset);
 					
