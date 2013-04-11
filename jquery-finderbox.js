@@ -16,6 +16,7 @@
             	child: '.finderbox-box',			//element searched
             	//TODO childExclude: '.finderbox-exc',	//ever excluded elements
             	childKey: '.finderbox-key',			//element for key search into element searched
+            	counter: '.counter',
             	initial: true,						//search initial text or inside text
                 searchText: 'Search...',			//text into search box
                 hideClass: 'finderbox-hide',		//class applied to non matched elements
@@ -30,6 +31,7 @@
 
 				$(this)
 				.on('keyup', function(e) {
+				console.log($(this).val(),e.keyCode);
 				
 					if(e.keyCode==27)//esc
 						$(this).blur();
@@ -53,7 +55,7 @@
 						})
 						.parent(options.child).addClass(options.hideClass);
 					}
-					$(this).prev('em').text( targetFind$.children(options.child).not('.'+options.hideClass).length );
+					$(this).siblings(options.counter).text( targetFind$.children(options.child).not('.'+options.hideClass).length );
 				})
 				.on('blur', function() {
 					var that = this;
@@ -61,7 +63,7 @@
 						
 						targetFind$.children(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						
-						$(that).prev('em').text( targetFind$.children(options.child).length );
+						$(that).siblings(options.counter).text( targetFind$.children(options.child).length );
 						
 					}, options.timeReset);
 					

@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
-<title></title> 
+<title>jquery filterbox</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <!--link href="style.css" rel="stylesheet" type="text/css" /-->
 <style>
 body {
-	background:#ddd;
+	background:#fcea88;
 }
 h3 {
 	margin:0
@@ -14,17 +14,21 @@ h3 {
 }
 hr {
 	clear:both;
-	margin:1em 0;
+	margin:2em 0;
+	border:none;
 }
 
 #container {
-	width: 50%;
+	width: 410px;
+	overflow:hidden;
 	float:left;
+	clear:both;
+	margin-bottom:1em;
 	background:#fc6;
 	border-radius:10px;
-	border:2px solid #c00;
-	box-shadow:2px 2px 5px #aaa;
-	padding:5px;
+	border:1px solid #ffaf4b;
+	box-shadow:2px 2px 3px #c19f69;
+	padding:1em;
 }
 .box {
 	float:left;
@@ -49,12 +53,13 @@ hr {
 	width:1em;
 }
 .findbox {
-	background:url('search-icon.png') no-repeat #eee 0 0;
-	border:2px solid #ccc;
+	background:url('search-icon.png') no-repeat #fcea88 0 0;
+	border:2px solid #ffaf4b;
 	font-size:.85em;
 	line-height:.85em;
 	padding:.25em .25em .25em 1.5em;
-	border-radius:.25em;
+	margin:.5em;
+	border-radius:.5em;
 }
 
 #copy {
@@ -77,9 +82,10 @@ hr {
 </head>
 
 <body>
-<h3>jQuery FinderBox Plugin 1.0.0 </h3>
+<h3>jQuery FilterBox Plugin 1.0.0 </h3>
 
 <a href="https://github.com/stefanocudini/jquery-filterbox">Github repository</a><br />
+<a href="https://bitbucket.org/zakis_/jquery-filterbox">Bitbucket repository</a><br />
 <a href="jquery-finderbox.js">Last version source</a><br />
 <a href="jquery-finderbox.min.js">Last version minified</a><br />
 
@@ -87,8 +93,8 @@ hr {
 <h4>Demo:</h4>
 <div id="container">
 
-	<em class="counter">&nbsp;</em>
 	<input class="findbox" type="text" size="10" vaue="" />
+	<em class="counter">&nbsp;</em>
 	<div class="boxlist">
 		<div class="box" id="yellow">
 			<h4 class="title">yellow</h4>
@@ -129,10 +135,13 @@ hr {
 	</div>
 </div>
 
-<div id="copy">by <a target="_blank" href="mailto:stefano.cudini@gmail.com">Stefano Cudini</a></div>
 <hr />
+
 <h4>Comments:</h4>
 	<div id="disqus_thread"></div>
+
+<div id="copy">by <a target="_blank" href="mailto:stefano.cudini@gmail.com">Stefano Cudini</a></div>
+
 
 <script src="/js/jquery-1.7.1.min.js"></script>
 <script src="jquery-finderbox.js"></script>
