@@ -18,12 +18,11 @@ hr {
 	border:none;
 }
 
-#container {
+.container {
 	width: 410px;
 	overflow:hidden;
 	float:left;
-	clear:both;
-	margin-bottom:1em;
+	margin:1em;
 	background:#fc6;
 	border-radius:10px;
 	border:1px solid #ffaf4b;
@@ -90,8 +89,51 @@ hr {
 <a href="jquery-finderbox.min.js">Last version minified</a><br />
 
 <hr />
-<h4>Demo:</h4>
-<div id="container">
+<h4>Demos:</h4>
+<div class="container">
+	<input class="findbox" type="text" size="10" vaue="" />
+	<em class="counter">&nbsp;</em>
+	<div class="boxlist">
+		<div class="box" id="yellow">
+			<h4 class="title">yellow</h4>
+			<p>Content of box</p>
+		</div>
+		<div class="box" id="red">
+			<h4 class="title">red</h4>
+			<p>Content of box</p>
+		</div>
+		<div class="box" id="blue">
+			<h4 class="title">blue</h4>
+			<p>Content of box</p>
+		</div>				
+		<div class="box" id="green">
+			<h4 class="title">green</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="orange">
+			<h4 class="title">orange</h4>
+			<p>Content of box</p>
+		</div>		
+		<div class="box" id="gray">
+			<h4 class="title">gray</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="brown">
+			<h4 class="title">brown</h4>
+			<p>Content of box</p>
+		</div>						
+		<div class="box" id="black">
+			<h4 class="title">black</h4>
+			<p>Content of box</p>
+		</div>	
+		<div class="box" id="white">
+			<h4 class="title">white</h4>
+			<p>Content of box</p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
 
 	<input class="findbox" type="text" size="10" vaue="" />
 	<em class="counter">&nbsp;</em>

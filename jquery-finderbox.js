@@ -12,7 +12,7 @@
         finderbox: function(options) {	//plugin name
  
             var defaults = {
-            	container: $(this).next(),			//element/selector within which to seek
+            	container: '.finderbox-container',			//element/selector within which to seek
             	child: '.finderbox-box',			//element searched
             	//TODO childExclude: '.finderbox-exc',	//ever excluded elements
             	childKey: '.finderbox-key',			//element for key search into element searched
@@ -26,7 +26,7 @@
          
             return this.each(function() {
             
-                var targetFind$ = $( options.container ),
+                var targetFind$ = $(this).siblings( options.container ),
                 	tf;//timer
 
 				$(this)
