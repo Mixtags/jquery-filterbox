@@ -31,7 +31,6 @@
 
 				$(this)
 				.on('keyup', function(e) {
-				console.log($(this).val(),e.keyCode);
 				
 					if(e.keyCode==27)//esc
 						$(this).blur();
@@ -39,7 +38,7 @@
 					var t = $(this).val();
 
 					if(t.length<1)
-						targetFind$.children(options.child+'.'+options.hideClass).removeClass(options.hideClass);
+						targetFind$.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						//$(this).trigger('blur');
 					else
 					{
@@ -53,17 +52,17 @@
 							return reg.test( $(this).text() ) ? false : this;
 
 						})
-						.parent(options.child).addClass(options.hideClass);
+						.parents(options.child).addClass(options.hideClass);
 					}
-					$(this).siblings(options.counter).text( targetFind$.children(options.child).not('.'+options.hideClass).length );
+					$(this).siblings(options.counter).text( targetFind$.find(options.child).not('.'+options.hideClass).length );
 				})
 				.on('blur', function() {
 					var that = this;
 					tf = setTimeout(function() {
 						
-						targetFind$.children(options.child+'.'+options.hideClass).removeClass(options.hideClass);
+						targetFind$.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						
-						$(that).siblings(options.counter).text( targetFind$.children(options.child).length );
+						$(that).siblings(options.counter).text( targetFind$.find(options.child).length );
 						
 					}, options.timeReset);
 					

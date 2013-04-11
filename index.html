@@ -91,7 +91,7 @@ hr {
 <hr />
 <h4>Demos:</h4>
 <div class="container">
-	<input class="findbox" type="text" size="10" vaue="" />
+	<input id="findbox1" class="findbox" type="text" size="10" vaue="" />
 	<em class="counter">&nbsp;</em>
 	<div class="boxlist">
 		<div class="box" id="yellow">
@@ -135,45 +135,29 @@ hr {
 
 <div class="container">
 
-	<input class="findbox" type="text" size="10" vaue="" />
+	<input id="findbox2" class="findbox" type="text" size="10" vaue="" />
 	<em class="counter">&nbsp;</em>
 	<div class="boxlist">
 		<div class="box" id="yellow">
-			<h4 class="title">yellow</h4>
+			<h4 class="title">color: <b>yellow</b></h4>
 			<p>Content of box</p>
 		</div>
 		<div class="box" id="red">
-			<h4 class="title">red</h4>
+			<h4 class="title">color: <b>red</b></h4>
 			<p>Content of box</p>
 		</div>
 		<div class="box" id="blue">
-			<h4 class="title">blue</h4>
+			<h4 class="title">color: <b>blue</b></h4>
 			<p>Content of box</p>
 		</div>				
 		<div class="box" id="green">
-			<h4 class="title">green</h4>
+			<h4 class="title">color: <b>green</b></h4>
 			<p>Content of box</p>
 		</div>	
 		<div class="box" id="orange">
-			<h4 class="title">orange</h4>
+			<h4 class="title">color: <b>orange</b></h4>
 			<p>Content of box</p>
 		</div>		
-		<div class="box" id="gray">
-			<h4 class="title">gray</h4>
-			<p>Content of box</p>
-		</div>	
-		<div class="box" id="brown">
-			<h4 class="title">brown</h4>
-			<p>Content of box</p>
-		</div>						
-		<div class="box" id="black">
-			<h4 class="title">black</h4>
-			<p>Content of box</p>
-		</div>	
-		<div class="box" id="white">
-			<h4 class="title">white</h4>
-			<p>Content of box</p>
-		</div>
 	</div>
 </div>
 
@@ -190,11 +174,17 @@ hr {
 <script>
 $(function() {
 
-	$('.findbox').finderbox({
+	$('#findbox1').finderbox({
 			container: '.boxlist',
            	child: '.box',
            	childKey: '.title'
 		});	
+
+	$('#findbox2').finderbox({
+			container: '.boxlist',
+           	child: '.box',
+           	childKey: '.title > b'
+		});			
 });
 </script>
 
