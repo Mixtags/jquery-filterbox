@@ -14,19 +14,20 @@
             var defaults = {
             	container: '.filterbox-container',			//element/selector within which to seek
             	child: '.filterbox-box',			//element searched
-            	//TODO childExclude: '.filterbox-exc',	//ever excluded elements
+            	childExclude: '.filterbox-exc',		//ever excluded elements
             	childKey: '.filterbox-key',			//element for key search into element searched
             	counter: '.counter',
             	initial: true,						//search initial text or inside text
                 searchText: 'Search...',			//text into search box
                 hideClass: 'filterbox-hide',		//class applied to non matched elements
+                //TODO if not specified using .hide()
                 timeReset: 400						//resetting time after filterbox input blur
             };
             var options = $.extend(defaults, options);
          
             return this.each(function() {
             
-                var targetFind$ = $(this).siblings( options.container ),
+                var targetFind$ = $(options.container),
                 	tf;//timer
 
 				$(this)
@@ -48,11 +49,13 @@
 							reg = new RegExp(I + t,'i');
 						
 						targetFind$.find(options.childKey).map(function() {
-							
+
 							return reg.test( $(this).text() ) ? false : this;
 
 						})
 						.parents(options.child).addClass(options.hideClass);
+
+						targetFind$.find(options.childExclude).not(options.hideClass).addClass(options.hideClass).hide();
 					}
 					$(this).siblings(options.counter).text( targetFind$.find(options.child).not('.'+options.hideClass).length );
 				})
