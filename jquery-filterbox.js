@@ -1,6 +1,6 @@
 /*!
- * jQuery FinderBox Plugin 1.0.0
- * https://github.com/stefanocudini/jquery-finderbox
+ * jQuery FilterBox Plugin 1.0.0
+ * https://github.com/stefanocudini/jquery-filterbox
  *
  * Copyright 2013, Stefano Cudini - stefano.cudini@gmail.com
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -9,18 +9,18 @@
 
 (function($) {
     $.fn.extend({
-        finderbox: function(options) {	//plugin name
+        filterbox: function(options) {	//plugin name
  
             var defaults = {
-            	container: '.finderbox-container',			//element/selector within which to seek
-            	child: '.finderbox-box',			//element searched
-            	//TODO childExclude: '.finderbox-exc',	//ever excluded elements
-            	childKey: '.finderbox-key',			//element for key search into element searched
+            	container: '.filterbox-container',			//element/selector within which to seek
+            	child: '.filterbox-box',			//element searched
+            	//TODO childExclude: '.filterbox-exc',	//ever excluded elements
+            	childKey: '.filterbox-key',			//element for key search into element searched
             	counter: '.counter',
             	initial: true,						//search initial text or inside text
                 searchText: 'Search...',			//text into search box
-                hideClass: 'finderbox-hide',		//class applied to non matched elements
-                timeReset: 400						//resetting time after finderbox input blur
+                hideClass: 'filterbox-hide',		//class applied to non matched elements
+                timeReset: 400						//resetting time after filterbox input blur
             };
             var options = $.extend(defaults, options);
          

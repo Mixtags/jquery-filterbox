@@ -43,7 +43,7 @@ hr {
 	margin:0;
 	white-space:nowrap;
 }
-.box.finderbox-hide {
+.box.filterbox-hide {
 	/* display:none; */
 	opacity:0.3; 
 }
@@ -91,8 +91,8 @@ hr {
 
 <a href="https://github.com/stefanocudini/jquery-filterbox">Github repository</a><br />
 <a href="https://bitbucket.org/zakis_/jquery-filterbox">Bitbucket repository</a><br />
-<a href="jquery-finderbox.js">Last version source</a><br />
-<a href="jquery-finderbox.min.js">Last version minified</a><br />
+<a href="jquery-filterbox.js">Last version source</a><br />
+<a href="jquery-filterbox.min.js">Last version minified</a><br />
 
 <hr />
 <h4>Demos:</h4>
@@ -177,17 +177,17 @@ hr {
 
 
 <script src="/js/jquery-1.7.1.min.js"></script>
-<script src="jquery-finderbox.js"></script>
+<script src="jquery-filterbox.js"></script>
 <script>
 $(function() {
 
-	$('#findbox1').finderbox({
+	$('#findbox1').filterbox({
 			container: '.boxlist',
            	child: '.box',
            	childKey: '.title'
 		});	
 
-	$('#findbox2').finderbox({
+	$('#findbox2').filterbox({
 			container: '.boxlist',
            	child: '.box',
            	childKey: '.title > b'
