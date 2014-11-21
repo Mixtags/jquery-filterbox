@@ -1,5 +1,5 @@
 /*!
- * jQuery FilterBox Plugin 1.0.0
+ * jQuery FilterBox Plugin 1.1.0
  * https://github.com/stefanocudini/jquery-filterbox
  *
  * Copyright 2013, Stefano Cudini - stefano.cudini@gmail.com
@@ -20,14 +20,17 @@
             	initial: true,						//search initial text or inside text
                 searchText: 'Search...',			//text into search box
                 hideClass: 'filterbox-hide',		//class applied to non matched elements
+                filteringClass: 'filtering',			//class applied on filtering time
                 //TODO if not specified using .hide()
-                timeReset: 400						//resetting time after filterbox input blur
+                timeReset: 400,						//resetting time after filterbox input blur
+//                onFiltering: $.noop,
+//                onFiltered: $.noop
             };
             var options = $.extend(defaults, options);
          
             return this.each(function() {
             
-                var targetFind$ = $(options.container),
+                var container$ = $(options.container),
                 	tf;//timer
 
 				$(this)
@@ -39,7 +42,7 @@
 					var t = $(this).val();
 
 					if(t.length<1)
-						targetFind$.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
+						container$.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						//$(this).trigger('blur');
 					else
 					{
@@ -48,24 +51,26 @@
 							I = options.initial ? '^' : '',
 							reg = new RegExp(I + t,'i');
 						
-						targetFind$.find(options.childKey).map(function() {
+						container$.addClass(options.filteringClass)
+						.find(options.childKey).map(function() {
 
 							return reg.test( $(this).text() ) ? false : this;
 
 						})
 						.parents(options.child).addClass(options.hideClass);
 
-						targetFind$.find(options.childExclude).not(options.hideClass).addClass(options.hideClass).hide();
+						container$.find(options.childExclude).not(options.hideClass).addClass(options.hideClass).hide();
 					}
-					$(this).siblings(options.counter).text( targetFind$.find(options.child).not('.'+options.hideClass).length );
+					$(this).siblings(options.counter).text( container$.find(options.child).not('.'+options.hideClass).length );
 				})
 				.on('blur', function() {
 					var that = this;
 					tf = setTimeout(function() {
 						
-						targetFind$.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
+						container$.removeClass(options.filteringClass)
+						.find(options.child+'.'+options.hideClass).removeClass(options.hideClass);
 						
-						$(that).siblings(options.counter).text( targetFind$.find(options.child).length );
+						$(that).siblings(options.counter).text( container$.find(options.child).length );
 						
 					}, options.timeReset);
 					
