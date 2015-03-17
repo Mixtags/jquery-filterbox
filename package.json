@@ -1,0 +1,25 @@
+{
+  "name": "jquery-filterbox",
+  "version": "0.0.0",
+  "description": "jQuery Plugin for search and filters interactively objects within the page",
+  "main": "jquery-filterbox.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stefanocudini/jquery-filterbox.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "filter",
+    "search"
+  ],
+  "author": "Stefano Cudini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanocudini/jquery-filterbox/issues"
+  },
+  "homepage": "https://github.com/stefanocudini/jquery-filterbox"
+}
