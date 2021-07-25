@@ -6,5 +6,3 @@
 
 plugin for javascript serching in page elements, filter elements inside a container using title elements
 
-Demo:
-[http://labs.easyblog.it/jquery-filterbox/](http://labs.easyblog.it/jquery-filterbox/)
